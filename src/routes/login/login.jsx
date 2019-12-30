@@ -1,18 +1,15 @@
-import React from 'react'
 import { Link ,Switch, Route, Router} from 'dva/router'
 import { renderRoutes } from 'react-router-config'
-import Sign from '../../components/loginComponents/sign/sign'
 
-const Login = (props) => {
-  console.log(props)
-  return (
-    <div>
+import React, { Component } from 'react'
+import style from './login.styl'
+export default class Login extends Component {
+  render() {
+    return (
+      <div className={style.login}>
       <span>login的主页面</span>
-
-      {renderRoutes(props.route.routes, { someProp: "these extra props are optional" })}
-
+      {renderRoutes(this.props.route.routes)}
     </div>
-  )
+    )
+  }
 }
-
-export default Login

@@ -10,7 +10,7 @@ const app = dva({
       {name:'antd',id:2,key:2},
     ]
   },
-  history: createMemoryHistory(),//history路由
+  history: createHashHistory(),//history路由
 
 });
 

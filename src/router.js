@@ -1,50 +1,48 @@
 import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
 import { renderRoutes } from 'react-router-config'
-import Home from './routes/home/home';
+import loadable from '@loadable/component'
+import dynamic from 'dva/dynamic'
+// import Home from './routes/home/home';
 import Login from './routes/login/login'
 import Sign from './components/loginComponents/sign/sign'
-
-const routes1 = [
-
+//   import { Spin } from 'antd';
+// const Home = loadable(() => import("./routes/home/home"), { fallback: <Spin /> });
+const routes = [
+  {
+    path: "/",
+    component: dynamic({
+      component: () => import('./components/loginComponents/sign/sign')
+    }),
+    exact: true,
+  },
   {
     path: "/home",
-    component: Home,
-    exact: true,
+    component:  dynamic({
+      component: () => import('./routes/home/home')
+    })
   },
   {
     path: "/login",
-    component: Login,
-    exact: true,
+    component: dynamic({
+      component: () => import('./routes/login/login')
+    }),
     routes: [
       {
         path: '/login/sign',
-        exact:true,
-        component: Sign
-
+        component: dynamic({
+          component: () => import('./components/loginComponents/sign/sign')
+        }),
       }
     ]
   },
-  {
-    path: "/",
-    exact: true,
-    component: Sign
-  },
-  // {
-  //   path: "/login/sign",
-  //   component: Sign,
-  //   exact:true
-  // }
 ]
 
 
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
-      <Switch>
-        {renderRoutes(routes1)}
-        {/* <Route path='/login/sign' component={Sign} ></Route> */}
-      </Switch>
+        {renderRoutes(routes)}
     </Router>
   );
 }

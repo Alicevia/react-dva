@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './home.css';
+import { NavLink } from 'dva/router';
 
 function Home() {
   return (
     <div className={styles.normal}>
-      2
+      <NavLink to='/login'>login</NavLink> <br/>
+      <NavLink to='/login/sign'>sign</NavLink> <br/>
+      <NavLink to='/'>///</NavLink>
+
       <h1 className={styles.title}>Yay! Welcome to dva!</h1>
       <div className={styles.welcome} />
       <ul className={styles.list}>

@@ -7,14 +7,18 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@loadable/component": "^5.11.0",
     "antd": "^3.25.2",
     "babel-plugin-import": "^1.12.2",
+    "customize-cra": "^0.9.1",
     "dva": "^2.4.1",
     "history": "^4.10.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-config": "^5.1.1",
-    "redux-actions": "^2.6.5"
+    "redux-actions": "^2.6.5",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2"
   },
   "devDependencies": {
     "babel-plugin-dva-hmr": "^0.3.2",
