@@ -4,6 +4,7 @@ import styles from './home.css';
 import { NavLink } from 'dva/router';
 
 function Home() {
+  
   return (
     <div className={styles.normal}>
       <NavLink to='/login'>login</NavLink> <br/>

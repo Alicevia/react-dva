@@ -39,7 +39,7 @@ const routes = [
 ]
 
 
-function RouterConfig({ history }) {
+function RouterConfig({ history,app }) {
   return (
     <Router history={history}>
         {renderRoutes(routes)}
