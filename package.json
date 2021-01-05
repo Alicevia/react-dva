@@ -9,7 +9,7 @@
   "dependencies": {
     "@loadable/component": "^5.11.0",
     "antd": "^3.25.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-plugin-import": "^1.12.2",
     "customize-cra": "^0.9.1",
     "dva": "^2.4.1",
